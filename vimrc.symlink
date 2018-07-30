@@ -1,0 +1,46 @@
+" Pathogen config
+execute pathogen#infect()
+
+" Basic configs
+set number relativenumber
+syntax on
+nmap <leader>] :w<cr>
+
+" Indentation
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+filetype plugin indent on
+
+" NERDTree config
+autocmd VimEnter * NERDTree
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" " Moves the focus to the document buffer instead of NERDTree
+autocmd VimEnter * wincmd p
+let NERDTreeShowHidden=1
+
+" Buffer navigation config
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" CtrlP config
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+" " Setup some default ignores
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+" " Use the nearest .git directory as the cwd
+" " This makes a lot of sense if you are working on a project that is in version
+" " control. It also supports works with .svn, .hg, .bzr.
+let g:ctrlp_working_path_mode = 'r'
+" " Use a leader instead of the actual named binding
+nmap <leader>p :CtrlP<cr>
+nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>bs :CtrlPMRU<cr>
