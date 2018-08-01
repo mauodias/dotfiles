@@ -6,4 +6,10 @@
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim.symlink/bundle/vim-airline"]
 	path = vim.symlink/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
+	url = https://github.com/vim-airline/vim-airline
+[submodule "vim.symlink/bundle/vim-gitgutter"]
+	path = vim.symlink/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim.symlink/bundle/vim-fugitive"]
+	path = vim.symlink/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git

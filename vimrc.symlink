@@ -6,6 +6,12 @@ set number relativenumber
 syntax on
 nmap <leader>] :w<cr>
 
+" vim-fugitive
+nmap <leader>gb :Gblame<cr>
+
+" vim-gitgutter
+set updatetime=100
+
 " Indentation
 set expandtab
 set shiftwidth=2
