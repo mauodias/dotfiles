@@ -52,4 +52,6 @@ nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
 
 " Visual changes
+hi CursorLine ctermbg=DarkGrey cterm=none
 set cursorline
+nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
