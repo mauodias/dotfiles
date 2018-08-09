@@ -30,7 +30,6 @@ autocmd VimEnter * wincmd p
 let NERDTreeShowHidden=1
 nnoremap <leader>t :NERDTreeToggle<cr>
 nnoremap <leader>f :NERDTreeFind<cr>
-let NERDTreeMinimalUI = 1
 
 " Buffer navigation config
 nnoremap <C-J> <C-W><C-J>
@@ -72,7 +71,4 @@ hi ColorColumn ctermbg=236
 " Split position
 set splitbelow
 set splitright
-
-" vim-airline tab line
-let g:airline#extensions#tabline#enabled = 1
 
