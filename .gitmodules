@@ -19,9 +19,6 @@
 [submodule "vim.symlink/bundle/setcolors.vim"]
 	path = vim.symlink/bundle/setcolors.vim
 	url = https://github.com/felixhummel/setcolors.vim.git
-[submodule "vim.symlink/bundle/vim-colorschemes"]
-	path = vim.symlink/bundle/vim-colorschemes
-	url = https://github.com/flazz/vim-colorschemes.git
 [submodule "vim.symlink/bundle/goyo.vim"]
 	path = vim.symlink/bundle/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
