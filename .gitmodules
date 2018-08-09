@@ -13,3 +13,18 @@
 [submodule "vim.symlink/bundle/vim-fugitive"]
 	path = vim.symlink/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim.symlink/bundle/vim-diminactive"]
+	path = vim.symlink/bundle/vim-diminactive
+	url = https://github.com/blueyed/vim-diminactive.git
+[submodule "vim.symlink/bundle/setcolors.vim"]
+	path = vim.symlink/bundle/setcolors.vim
+	url = https://github.com/felixhummel/setcolors.vim.git
+[submodule "vim.symlink/bundle/vim-colorschemes"]
+	path = vim.symlink/bundle/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "vim.symlink/bundle/goyo.vim"]
+	path = vim.symlink/bundle/goyo.vim
+	url = https://github.com/junegunn/goyo.vim
+[submodule "Tools/falcon"]
+	path = Tools/falcon
+	url = https://github.com/fenetikm/falcon.git

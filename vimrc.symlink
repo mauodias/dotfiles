@@ -1,3 +1,7 @@
+" Set 256 colors
+set t_Co=256
+
+
 " Pathogen config
 execute pathogen#infect()
 
@@ -24,6 +28,9 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " " Moves the focus to the document buffer instead of NERDTree
 autocmd VimEnter * wincmd p
 let NERDTreeShowHidden=1
+nnoremap <leader>t :NERDTreeToggle<cr>
+nnoremap <leader>f :NERDTreeFind<cr>
+let NERDTreeMinimalUI = 1
 
 " Buffer navigation config
 nnoremap <C-J> <C-W><C-J>
@@ -52,6 +59,20 @@ nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
 
 " Visual changes
-hi CursorLine ctermbg=DarkGrey cterm=none
+colorscheme falcon
+hi CursorLine ctermbg=235 cterm=none
 set cursorline
 nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
+
+" vim-diminactive
+let g:diminactive_use_syntax = 1
+let g:diminactive_use_colorcolumn = 1
+hi ColorColumn ctermbg=236
+
+" Split position
+set splitbelow
+set splitright
+
+" vim-airline tab line
+let g:airline#extensions#tabline#enabled = 1
+
