@@ -1,6 +1,11 @@
 " Set 256 colors
 set t_Co=256
-
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
 
 " Pathogen config
 execute pathogen#infect()
@@ -58,7 +63,8 @@ nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
 
 " Visual changes
-colorscheme falcon
+set background=dark
+colorscheme solarized
 hi CursorLine ctermbg=235 cterm=none
 set cursorline
 nnoremap <silent> <Leader>l ml:execute 'match Search /\%'.line('.').'l/'<CR>
@@ -72,3 +78,5 @@ hi ColorColumn ctermbg=236
 set splitbelow
 set splitright
 
+" vim-airline
+let g:airline_theme='stellarized_dark'

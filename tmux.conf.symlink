@@ -36,6 +36,7 @@ unbind C-Right
 bind r source-file ~/.tmux.conf
 
 #set inactive/active window styles
-set -g window-style 'fg=colour247,bg=colour236'
-set -g window-active-style 'fg=colour250,bg=black'
+#set -g window-style 'fg=colour247,bg=colour236'
+#set -g window-active-style 'fg=colour250,bg=black'
 
+source-file ~/dotfiles/Tools/tmux-colors-solarized/tmuxcolors-256.conf

@@ -100,6 +100,7 @@ alias learn="cd ~/Learning; clear; ls"
 alias sonic="cd ~/Projects/SonicDI/Repos; clear; ls"
 alias jsonpretty="python -m json.tool | pygmentize -l json"
 alias venv="source .venv/bin/activate"
+alias dotfiles="cd ~/dotfiles; clear; ls"
 
 # Java env variable (added on 24/03/2018)
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
@@ -123,8 +124,9 @@ export TERM=xterm-256color
 
 randpass () {
   if [ $# -eq 0 ]; then
-    LC_CTYPE=C < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-32};echo;
+    len=32
   else
-    LC_CTYPE=C < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-$1};echo;
+    len=$1
   fi
+  LC_CTYPE=C < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-$len};echo;
 }

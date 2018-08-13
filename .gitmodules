@@ -25,3 +25,15 @@
 [submodule "Tools/falcon"]
 	path = Tools/falcon
 	url = https://github.com/fenetikm/falcon.git
+[submodule "vim.symlink/bundle/vim-dark_eyes"]
+	path = vim.symlink/bundle/vim-dark_eyes
+	url = https://github.com/bf4/vim-dark_eyes.git
+[submodule "vim.symlink/bundle/stellarized"]
+	path = vim.symlink/bundle/stellarized
+	url = https://github.com/nightsense/stellarized.git
+[submodule "vim.symlink/bundle/vim-colors-solarized"]
+	path = vim.symlink/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "Tools/tmux-colors-solarized"]
+	path = Tools/tmux-colors-solarized
+	url = https://github.com/seebi/tmux-colors-solarized
