@@ -1,19 +1,27 @@
 " Set 256 colors
 set t_Co=256
-set termguicolors
+"set termguicolors
+set noshowmode
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+set mouse=a
+set autoread
+set clipboard=unnamed
 
 " Pathogen config
 execute pathogen#infect()
 
 " Basic configs
-set number relativenumber
+set relativenumber
 syntax on
 nmap <leader>] :w<cr>
+"set nowrap
+set sidescroll=1
+set list listchars=precedes:<,extends:>,tab:\ \ ,trail:\ 
+set nofixendofline
 
 " vim-fugitive
 nmap <leader>gb :Gblame<cr>
@@ -28,11 +36,12 @@ set softtabstop=2
 filetype plugin indent on
 
 " NERDTree config
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " " Moves the focus to the document buffer instead of NERDTree
-autocmd VimEnter * wincmd p
-let NERDTreeShowHidden=1
+"autocmd VimEnter * wincmd p
+"let NERDTreeShowHidden=1
+let NERDTreeIgnore = ['\.pyc$']
 nnoremap <leader>t :NERDTreeToggle<cr>
 nnoremap <leader>f :NERDTreeFind<cr>
 
@@ -58,9 +67,9 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_working_path_mode = 'r'
 " " Use a leader instead of the actual named binding
 nmap <leader>p :CtrlP<cr>
-nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bs :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
-nmap <leader>bs :CtrlPMRU<cr>
+nmap <leader>bb :CtrlPMRU<cr>
 
 " Visual changes
 set background=dark
@@ -74,9 +83,16 @@ let g:diminactive_use_syntax = 1
 let g:diminactive_use_colorcolumn = 1
 hi ColorColumn ctermbg=236
 
+" 80 column
+"highlight OverLength ctermbg=darkgrey ctermfg=white
+"match OverLength /\%81v.\+/
+
 " Split position
 set splitbelow
 set splitright
 
 " vim-airline
 let g:airline_theme='stellarized_dark'
+
+" Goyo
+let g:goyo_width = 120

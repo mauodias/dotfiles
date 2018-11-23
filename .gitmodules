@@ -37,3 +37,6 @@
 [submodule "Tools/tmux-colors-solarized"]
 	path = Tools/tmux-colors-solarized
 	url = https://github.com/seebi/tmux-colors-solarized
+[submodule "vim.symlink/bundle/vim-prettier"]
+	path = vim.symlink/bundle/vim-prettier
+	url = https://github.com/prettier/vim-prettier

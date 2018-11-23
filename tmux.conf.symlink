@@ -1,5 +1,5 @@
 # split panes using | and -
-bind | split-window -h
+bind \ split-window -h
 bind - split-window -v
 unbind '"'
 unbind %
@@ -38,5 +38,26 @@ bind r source-file ~/.tmux.conf
 #set inactive/active window styles
 #set -g window-style 'fg=colour247,bg=colour236'
 #set -g window-active-style 'fg=colour250,bg=black'
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Copy-paste integration
+set-option -g default-command "reattach-to-user-namespace -l bash"
+
+# Use vim keybindings in copy mode
+setw -g mode-keys vi
+
+# Setup 'v' to begin selection as in Vim
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Update default binding of `Enter` to also use copy-pipe
+unbind-key -T copy-mode-vi Enter
+bind-key -T copy-mode-vi Enter send-keys -X copy-pipe "reattach-to-user-namespace pbcopy"
+
+# Bind ']' to use pbpaste
+bind ] run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
 
 source-file ~/dotfiles/Tools/tmux-colors-solarized/tmuxcolors-256.conf
