@@ -6,4 +6,5 @@
 - name: Set default shell
   user:
     name: "{{ user }}"
-    shell: "{{ shell_path }}"
+    shell: "{{ shell_path.stdout }}"
+  become: yes
