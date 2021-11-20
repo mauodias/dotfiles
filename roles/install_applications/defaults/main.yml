@@ -13,7 +13,7 @@ packages:
 casks:
   - firefox
   - iterm2
-  - keybase
+    #  - keybase # Not installable on M1 via homebrew yet
   - pocket-casts
   - spotify
   - whatsapp
