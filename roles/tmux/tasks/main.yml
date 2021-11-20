@@ -1,0 +1,61 @@
+---
+- name: Tmux Configs
+  blockinfile:
+    path: "{{ home }}/.tmux.conf"
+    create: yes
+    marker: "# {mark} TMUX CONFIG"
+    block: |
+      # split panes using | and -
+      bind \\ split-window -h
+      bind - split-window -v
+      unbind '"'
+      unbind %
+      
+      # remap prefix from 'C-b' to 'C-a'
+      unbind C-b
+      set-option -g prefix C-a
+      bind-key C-a send-prefix
+      
+      # switch panes using prefix and vi directions
+      bind -r h select-pane -L
+      bind -r l select-pane -R
+      bind -r k select-pane -U
+      bind -r j select-pane -D
+      
+      # resize panes using prefix and CTRL+vi directions
+      
+      bind -r C-h resize-pane -L
+      bind -r C-l resize-pane -R
+      bind -r C-k resize-pane -U
+      bind -r C-J resize-pane -D
+      
+      # reorder windows
+      
+      bind -r S-Left swap-window -t -1
+      bind -r S-Right swap-window -t +1
+      
+      # unbind above
+      unbind Up
+      unbind Down
+      unbind Left
+      unbind Right
+      unbind C-Up
+      unbind C-Down
+      unbind C-Left
+      unbind C-Right
+      
+      # C-s for syncing panes
+      
+      bind -r C-s set-window-option synchronize-panes
+      
+      # reload config file (change file location to your the tmux.conf you want to use)
+      bind r source-file ~/.tmux.conf
+      
+      # Start windows and panes at 1, not 0
+      set -g base-index 1
+      setw -g pane-base-index 1
+      
+      set-option -g default-shell /bin/zsh
+      
+      # Sets vi key bindings
+      set-window-option -g mode-keys vi
