@@ -8,6 +8,8 @@ function ensure_homebrew() {
   RC=$?
   if [ "${RC}" -ne 0 ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
   echo Homebrew installed
 }
@@ -16,7 +18,7 @@ function ensure_ansible(){
   ANSIBLE_PATH=$(which ansible)
   RC=$?
   if [ "${RC}" -ne 0 ]; then
-    python3 -m pip install ansible
+    brew install python ansible
   fi
   echo Ansible installed
 }
