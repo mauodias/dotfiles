@@ -1,0 +1,16 @@
+---
+- name: Gopass Config
+  blockinfile:
+    path: "{{ home }}/.config/gopass/config.yml"
+    create: yes
+    marker: "# {mark} GOPASS CONFIG"
+    block: |
+      autoclip: true
+      autoimport: true
+      cliptimeout: 45
+      nocolor: false
+      nopager: false
+      notifications: true
+      parsing: true
+      path: {{ home }}/.password-store
+      mounts: {}

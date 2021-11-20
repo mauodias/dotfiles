@@ -1,0 +1,12 @@
+---
+- name: GPG Agent Config
+  blockinfile:
+    path: "{{ home }}/.gnupg/gpg-agent.conf"
+    create: yes
+    marker: "# {mark} GPG AGENT CONFIG"
+    block: |
+      default-cache-ttl 0
+      max-cache-ttl 1
+      pinentry-program /usr/local/bin/pinentry-mac
+      default-cache-ttl-ssh 0
+      max-cache-ttl-ssh 0

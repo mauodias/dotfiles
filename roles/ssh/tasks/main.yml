@@ -1,15 +1,4 @@
 ---
-- name: General SSH Config
-  blockinfile:
-    path: "{{ home }}/.ssh/config"
-    create: yes
-    marker: "# {mark} GENERAL SSH CONFIG"
-    block: |
-      Host *
-        AddKeysToAgent yes
-        UseKeychain yes
-        IdentityFile {{ home }}/.ssh/id_rsa
-
 - name: GitHub SSH Config
   blockinfile:
     path: "{{ home }}/.ssh/config"
@@ -18,3 +7,15 @@
     block: |
       Host github.com
         IdentityFile {{ home }}/.ssh/github
+
+- name: General SSH Config
+  blockinfile:
+    path: "{{ home }}/.ssh/config"
+    create: yes
+    insertafter: EOF
+    marker: "# {mark} GENERAL SSH CONFIG"
+    block: |
+      Host *
+        AddKeysToAgent yes
+        UseKeychain yes
+        IdentityFile {{ home }}/.ssh/id_rsa

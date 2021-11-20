@@ -4,14 +4,21 @@
     name: user.useconfigonly
     scope: global
     value: true
+
 - name: Set user name
   git_config:
     name: user.name
     scope: global
     value: "{{ git_name }}"
+
 - name: Set user email
   git_config:
     name: user.email
     scope: global
     value: "{{ git_email }}"
-    value: false
+
+- name: Set signing key
+  git_config:
+    name: user.signingKey
+    scope: global
+    value: "{{ signing_key_id }}"
