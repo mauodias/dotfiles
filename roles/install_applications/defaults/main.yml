@@ -11,4 +11,9 @@ packages:
   - zsh
 
 casks:
+  - firefox
   - iterm2
+  - keybase
+  - pocket-casts
+  - spotify
+  - whatsapp
