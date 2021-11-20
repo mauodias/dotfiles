@@ -1,0 +1,9 @@
+---
+- name: User Config
+  import_tasks: user.yml
+
+- name: Diff Tool Config
+  import_tasks: diff.yml
+
+- name: Authentication Config
+  import_tasks: auth.yml

@@ -1,0 +1,11 @@
+---
+- name: Set credential helper
+  git_config:
+    name: credential.helper
+    scope: global
+    value: osxkeychain
+- name: Set gpg program
+  git_config:
+    name: gpg.program
+    scope: global
+    value: gpg

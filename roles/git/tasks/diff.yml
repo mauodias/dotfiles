@@ -1,0 +1,10 @@
+---
+- name: Define diff tool
+  git_config:
+    name: diff.tool
+    scope: global
+    value: vimdiff
+- name: No difftool prompt
+  git_config:
+    name: difftool.prompt
+    scope: global
