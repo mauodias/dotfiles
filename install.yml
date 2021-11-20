@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  roles:
+    - prepare_environment
+    - install_applications
+    - post_install
+
+- import_playbook: dotfiles.yml

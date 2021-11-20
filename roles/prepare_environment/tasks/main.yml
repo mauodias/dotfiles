@@ -1,0 +1,6 @@
+- name: Generate SSH key pairs
+  openssh_keypair:
+    path: "{{ home }}/.ssh/{{ item.name }}"
+    type: "{{ item.type }}"
+    size: "{{ item.size }}"
+  loop: "{{ keys }}"

@@ -1,0 +1,9 @@
+---
+- name: Determine shell path
+  command: "which {{ shell }}"
+  register: shell_path
+
+- name: Set default shell
+  user:
+    name: "{{ user }}"
+    shell: "{{ shell_path }}"

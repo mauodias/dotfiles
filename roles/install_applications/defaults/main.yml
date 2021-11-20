@@ -1,0 +1,14 @@
+packages:
+  - direnv
+  - gnupg
+  - gopass
+  - pinentry-mac
+  - pyenv
+  - terraform
+  - tig
+  - tmux
+  - tree
+  - zsh
+
+casks:
+  - iterm2
