@@ -1,6 +1,6 @@
 REPO_USER="$(whoami)"
 REPO_NAME="dotfiles"
-REPO_URL="git@github.com:${REPO_USER}/${REPO_NAME}.git"
+REPO_URL="https://github.com/${REPO_USER}/${REPO_NAME}.git"
 PROJECTS_FOLDER="$HOME/Projects"
 
 function ensure_homebrew() {
