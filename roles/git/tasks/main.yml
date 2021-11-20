@@ -1,4 +1,5 @@
 ---
-- import_tasks: user.yml
-- import_tasks: diff.yml
 - import_tasks: auth.yml
+- import_tasks: commit.yml
+- import_tasks: diff.yml
+- import_tasks: user.yml

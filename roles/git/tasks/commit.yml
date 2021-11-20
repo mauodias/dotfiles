@@ -1,0 +1,6 @@
+---
+- name: Auto sign all commits
+  git_config:
+    name: commit.gpgsign
+    scope: global
+    value: true
