@@ -1,0 +1,11 @@
+---
+- name: Install oh-my-zsh
+  block:
+    - name: Check if oh-my-zsh is installed
+      stat:
+        path: "{{ home }}/.oh-my-zsh"
+        register: omz
+
+    - name: Download and run oh-my-zsh installer
+      command: 'sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended'
+      when: not omz.stat.exists

@@ -1,2 +1,3 @@
-- import_tasks: packages.yml
 - import_tasks: homebrew_casks.yml
+- import_tasks: others.yml
+- import_tasks: packages.yml
