@@ -1,0 +1,25 @@
+---
+- name: Fix history search with arrows
+  blockinfile:
+    path: "{{ zshrc }}"
+    marker: "# {mark} SEARCH WITH ARROWS"
+    block: |
+      # Search history with characters already typed
+      autoload up-line-or-beginning-search
+      autoload down-line-or-beginning-search
+      zle -N up-line-or-beginning-search
+      zle -N down-line-or-beginning-search
+      [[ -n "${key[Up]}"      ]]  && bindkey   "${key[Up]}"       up-line-or-beginning-search
+      [[ -n "${key[Down]}"    ]]  && bindkey   "${key[Down]}"    down-line-or-beginning-search
+
+- name: Fix PS1 now updating for virtualenv and direnv
+  blockinfile:
+    path: "{{ zshrc }}"
+    marker: "# {mark} FIX PS1 UPDATE FOR VIRTUALENV AND DIRENV"
+    block: |
+      show_virtual_env() {
+          if [[ -n "$VIRTUAL_ENV" && -n "$DIRENV_DIR" ]]; then
+              echo "($(basename $VIRTUAL_ENV)) "
+          fi
+      }
+      PS1='$(show_virtual_env)'$PS1

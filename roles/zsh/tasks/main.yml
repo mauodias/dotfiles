@@ -1,0 +1,12 @@
+---
+- name: Ensure .zshrc
+  file:
+    path: "{{ zshrc }}"
+    state: touch
+    mode: u=rw,g=r,o=r
+
+- import_tasks: aliases.yml
+- import_tasks: behavior.yml
+- import_tasks: extensions.yml
+- import_tasks: general_exports.yml
+- import_tasks: oh-my-zsh.yml

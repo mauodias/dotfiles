@@ -1,0 +1,9 @@
+---
+- name: Set aliases
+  blockinfile:
+    path: "{{ zshrc }}"
+    marker: "# {mark} ALIASES"
+    block: |
+      alias proj="cd ~/Projects"
+      alias sed="gsed"
+      alias k="kubectl"

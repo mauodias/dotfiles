@@ -1,0 +1,9 @@
+---
+- name: Set extensions
+  blockinfile:
+    path: "{{ zshrc }}"
+    marker: "# {mark} EXTENSIONS"
+    insertafter: EOF
+    block: |
+      eval "$(direnv hook zsh)"
+      eval "$(pyenv init -)"

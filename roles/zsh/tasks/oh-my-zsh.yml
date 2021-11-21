@@ -1,0 +1,55 @@
+---
+- name: Check if oh-my-zsh is installed
+  stat:
+    path: "{{ home }}/.oh-my-zsh"
+  register: omz
+
+- name: oh-my-zsh configs
+  block:
+    - name: Set required variables
+      blockinfile:
+        path: "{{ zshrc }}"
+        marker: "# {mark} OH-MY-ZSH CONFIGS"
+        block: |
+          export ZSH="{{ home }}/.oh-my-zsh"
+          export ZSH_THEME="classyTouch"
+
+    - name: Set plugins
+      blockinfile:
+        path: "{{ zshrc }}"
+        marker: "# {mark} OH-MY-ZSH PLUGINS"
+        block: |
+          plugins=(
+            git
+            ansible
+            brew
+            copybuffer
+            docker
+            emoji
+            gitignore
+            httpie
+            python
+            terraform
+            z
+          )
+
+    - name: Copy template
+      copy:
+        src: classyTouch.zsh-theme
+        dest: "{{ home }}/.oh-my-zsh/themes"
+
+    - name: Other configs
+      blockinfile:
+        path: "{{ zshrc }}"
+        marker: "# {mark} OH-MY-ZSH OTHER CONFIGS"
+        block: |
+          DISABLE_UNTRACKED_FILES_DIRTY="true" 
+          ZSH_THEME="classyTouch"
+
+    - name: Initialize oh-my-zsh
+      lineinfile:
+        path: "{{ zshrc }}"
+        insertafter: "# END OH-MY-ZSH OTHER CONFIGS"
+        line: "source $ZSH/oh-my-zsh.sh"
+
+  when: omz.stat.exists
