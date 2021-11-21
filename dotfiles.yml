@@ -4,6 +4,7 @@
     - git
     - gopass
     - gpg
+    - others
     - ssh
     - tmux
     - zsh

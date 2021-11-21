@@ -1,0 +1,5 @@
+---
+- name: Copy pyenv to direnv hook
+  copy:
+    src: direnvrc
+    dest: "{{ home }}/.direnvrc"
