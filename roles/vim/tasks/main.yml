@@ -1,0 +1,67 @@
+---
+- name: Ensure swap folder
+  file:
+    path: "{{ home }}/.vim/swap"
+    state: directory
+
+- name: Ensure .vimrc
+  file:
+    path: "{{ vimrc }}"
+    state: touch
+
+- name: Basic configurations
+  blockinfile:
+    path: "{{ vimrc }}"
+    marker: "\" {mark} BASIC VIMRC CONFIGURATIONS"
+    block: |
+      syntax on
+      set relativenumber
+      set number
+      set showcmd
+      set laststatus=2 " Show statusbar in all windows
+      set directory=$HOME/.vim/swap// " Change swap folder
+      set nofixendofline " Don't add EOL when missing
+
+- name: Visual configurations
+  blockinfile:
+    path: "{{ vimrc }}"
+    marker: "\" {mark} VISUAL CONFIGURATIONS"
+    block: |
+      colorscheme slate
+      " Cursor line
+      set cursorline
+      " Extra white spaces before EOL
+      highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+      autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+      match ExtraWhitespace /\s\+$/
+      nnoremap <leader>/ :set hlsearch!<cr> " Press \/ to highlight or hide search matches
+      set list listchars=precedes:<,extends:>,tab:\ \ ,trail:\ 
+
+- name: Navigation
+  blockinfile:
+    path: "{{ vimrc }}"
+    marker: "\" {mark} NAVIGATION"
+    block: |
+      set splitbelow
+      set splitright
+      set backspace=indent,start,eol
+
+- name: Indentation
+  blockinfile:
+    path: "{{ zshrc }}"
+    marker: "\" {mark} INDENTATION"
+    block: |
+      set expandtab
+      set shiftwidth=2
+      set softtabstop=2
+      filetype plugin indent on
+
+- name: Folding
+  blockinfile:
+    path: "{{ vimrc }}"
+    marker: "\" {mark} FOLDING"
+    block: |
+      set foldmethod=indent
+      set foldlevel=99
+      nnoremap <space> za
+      vnoremap <space> zf
