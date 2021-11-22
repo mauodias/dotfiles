@@ -16,5 +16,6 @@ casks:
     #  - keybase # Not installable on M1 via homebrew yet
   - pocket-casts
   - scroll-reverser
+  - slack
   - spotify
   - whatsapp
