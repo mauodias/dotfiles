@@ -35,9 +35,13 @@ ensure_ansible
 echo
 
 echo NEXT: Prepare Projects folder and download ansible dotfiles
-mkdir -p ${PROJECTS_FOLDER}
+if [ ! -d ${PROJECTS_FOLDER} ]; then
+  mkdir -p ${PROJECTS_FOLDER}
+fi
 cd ${PROJECTS_FOLDER}
-git clone ${REPO_URL}
+if [ ! -d ${REPO_NAME} ]; then
+  git clone ${REPO_URL}
+fi
 cd ${REPO_NAME}
 echo
 
