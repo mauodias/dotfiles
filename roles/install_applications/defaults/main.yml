@@ -1,5 +1,7 @@
 packages:
   - direnv
+  - gawk
+  - gnu-sed
   - gnupg
   - gopass
   - pinentry-mac
