@@ -1,4 +1,8 @@
 ---
+- name: Get pinentry-mac location
+  command: which pinentry-mac
+  register: pinentry_mac
+
 - name: GPG Agent Config
   blockinfile:
     path: "{{ home }}/.gnupg/gpg-agent.conf"
@@ -7,6 +11,6 @@
     block: |
       default-cache-ttl 0
       max-cache-ttl 1
-      pinentry-program /usr/local/bin/pinentry-mac
+      pinentry-program {{ pinentry_mac.stdout }}
       default-cache-ttl-ssh 0
       max-cache-ttl-ssh 0
