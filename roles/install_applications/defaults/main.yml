@@ -18,7 +18,6 @@ casks:
   - firefox
   - iterm2
     #  - keybase # Not installable on M1 via homebrew yet
-  - parallels
   - pocket-casts
   - scroll-reverser
   - slack
