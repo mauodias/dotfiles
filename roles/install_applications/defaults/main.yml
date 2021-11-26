@@ -1,6 +1,7 @@
 packages:
   - direnv
   - gawk
+  - gh
   - gnu-sed
   - gnupg
   - gopass
@@ -21,4 +22,5 @@ casks:
   - scroll-reverser
   - slack
   - spotify
+  - virtualbox
   - whatsapp
