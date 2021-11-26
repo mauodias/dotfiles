@@ -48,7 +48,7 @@
 
 - name: Indentation
   blockinfile:
-    path: "{{ zshrc }}"
+    path: "{{ vimrc }}"
     marker: "\" {mark} INDENTATION"
     block: |
       set expandtab
