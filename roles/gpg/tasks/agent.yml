@@ -14,3 +14,6 @@
       pinentry-program {{ pinentry_mac.stdout }}
       default-cache-ttl-ssh 0
       max-cache-ttl-ssh 0
+
+- name: Disable option to save password
+  command: defaults write org.gpgtools.common DisableKeychain -bool yes
