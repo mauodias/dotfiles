@@ -17,6 +17,7 @@ packages:
 
 casks:
   - firefox
+  - bettertouchtool
   - gpg-suite
   - iterm2
     #  - keybase # Not installable on M1 via homebrew yet
