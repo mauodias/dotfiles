@@ -1,0 +1,6 @@
+---
+- name: Change default branch name on new repos
+  git_config:
+    name: init.defaultBranch
+    scope: global
+    value: main
