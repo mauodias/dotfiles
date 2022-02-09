@@ -8,4 +8,5 @@
       export PATH=$PATH:$HOME/.tools
       export LC_ALL=en_US.UTF-8
       export PYTHONDONTWRITEBYTECODE=1 # Disables creation of .pyc and .pyo files
+      export PIPENV_VENV_IN_PROJECT=1 # Creates pipenv virtualenvs under project directory
       export HOMEBREW_NO_AUTO_UPDATE=1 # Don't auto update homebrew at every execution
