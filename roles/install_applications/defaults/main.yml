@@ -6,6 +6,7 @@ packages:
   - gnupg
   - golang
   - gopass
+  - httpie
   - jq
   - pinentry-mac
   - pipenv
