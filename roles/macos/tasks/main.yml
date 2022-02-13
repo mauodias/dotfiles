@@ -1,0 +1,12 @@
+---
+- name: Enable key repetition
+  shell:
+    cmd: "defaults write -g ApplePressAndHoldEnabled -bool false"
+
+- name: Set initial delay for key repetition
+  shell:
+    cmd: "defaults write -g InitialKeyRepeat -int 15"
+
+- name: Set delay between key repetitions
+  shell:
+    cmd: "defaults write -g KeyRepeat -int 1"

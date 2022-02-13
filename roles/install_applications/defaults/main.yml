@@ -25,6 +25,7 @@ casks:
   - iterm2
     #  - keybase # Not installable on M1 via homebrew yet
   - pocket-casts
+  - postman
   - scroll-reverser
   - slack
   - spotify
