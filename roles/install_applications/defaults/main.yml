@@ -24,7 +24,7 @@ casks:
   - deezer
   - gpg-suite
   - iterm2
-    #  - keybase # Not installable on M1 via homebrew yet
+  - keybase
   - pocket-casts
   - postman
   - scroll-reverser
