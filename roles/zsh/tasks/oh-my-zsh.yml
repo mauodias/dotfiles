@@ -25,6 +25,7 @@
             brew
             copybuffer
             docker
+            docker-compose
             emoji
             gitignore
             httpie
