@@ -8,6 +8,7 @@ packages:
   - gopass
   - httpie
   - jq
+  - pgcli
   - pinentry-mac
   - pipenv
   - pyenv
@@ -27,7 +28,9 @@ casks:
   - keybase
   - pocket-casts
   - postman
+  - rectangle
   - scroll-reverser
+  - signal
   - slack
   - spotify
   - stremio
