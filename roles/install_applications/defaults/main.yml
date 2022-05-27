@@ -1,6 +1,7 @@
 packages:
   - direnv
   - gawk
+  - exa
   - gh
   - gnu-sed
   - gnupg
@@ -8,6 +9,7 @@ packages:
   - gopass
   - httpie
   - jq
+  - peco
   - pgcli
   - pinentry-mac
   - pipenv
