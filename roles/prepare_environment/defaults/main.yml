@@ -2,3 +2,6 @@ keys:
   - name: github
     type: ed25519
     size: 0
+  - name: gitlab
+    type: ed25519
+    size: 0

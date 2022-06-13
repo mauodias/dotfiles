@@ -1,12 +1,13 @@
 ---
-- name: GitHub SSH Config
+- name: Version Control SSH Config
   blockinfile:
     path: "{{ home }}/.ssh/config"
     create: yes
-    marker: "# {mark} GITHUB SSH CONFIG"
+    marker: "# {mark} {{ item.name | upper }} SSH CONFIG"
     block: |
-      Host github.com
-        IdentityFile {{ home }}/.ssh/github
+      Host {{ item.url }}
+        IdentityFile {{ home }}/.ssh/{{ item.name | lower }}
+  loop: "{{ vc_tools }}"
 
 - name: General SSH Config
   blockinfile:
