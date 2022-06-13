@@ -9,6 +9,7 @@ packages:
   - gopass
   - httpie
   - jq
+  - pam-reattach
   - peco
   - pgcli
   - pinentry-mac
